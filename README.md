@@ -2,7 +2,7 @@
 URL을 입력받아 줄여주고, 단축URL을 입력하면 원래 URL 로 리다이렉트하는 URL Shortening Service  
 예) https://recruit.navercorp.com/naver/job/detail/developer/?annoId=20002705&classId&jobId&fbclid=IwAR3sVYHouw4HfYVW2161BdBwtW4r5Cyd7u_Ho_DiOy9YtUVG_hRoy7k88uI => https://naver.com/AZa0QRI1
 
-## 1. 
+## 1. 개발 내용
 * 단축URL Key 는 8 Character 이내로 생성되도록 하였다.
 * 동일한 URL 에 대한 요청은 동일한 단축URL Key 로 응답한다.
 * 단축URL 을 요청받으면 원래 URL 로 리다이렉트한다.
