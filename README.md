@@ -106,8 +106,7 @@ SHA-1 암호화한 값이 Original URL보다 긴 경우도 있지만, 매우 긴
 데이터베이스에 저장하는 방식을 선택했는데 데이터베이스는 H2 Database 를 이용하였다.  
 * Shortening URL은 고유해야 하기 때문에 Shortening URL 의 재료가 되는 숫자형 값은 DB 에서 생성하는 자동 증가 하는 값을 이용하였다.(sequence 이용)  
 * base62를 이용할 경우 만들 수 있는 1 ~ 8 자리의 값은 총 62^8 = 218,340,105,584,896 개이다.
-* Shortening URL이 1자리인 것은 미관상 좋지 못하다고 생각하여 4자리 수 이상의 Shortening URL 을 만들기로 결정하고, sequence 값은 임의적으로 1,000,000 을 시작 값으로 설정하였다.
-요구 조건에서 개수의 제한이 없었고, 최대 218조 개 이상의 값을 생성할 수 있기 때문에 100만 개는 감소는 미미한 것으로 보여진다.
+* Shortening URL이 1자리인 것은 미관상 좋지 못하다고 생각하여 4자리 수 이상의 Shortening URL 을 만들기로 결정하고, sequence 값은 임의적으로 1,000,000 을 시작 값으로 설정하였다. 최대 218조 개 이상의 값을 생성할 수 있기 때문에 100만 개는 감소는 미미한 것으로 보여진다.
 * Original URL 값을 SHA-1 으로 암호화한 값을 담기 위한 컬럼을 추가하였고, Unique Index 를 걸었다.
 * Original URL의 크기는 VARCHAR(4000)으로 제한하였다.
 * 위 내용을 바탕으로 시퀀스, 테이블, 인덱스는 아래와 같이 생성하였다. 
@@ -131,7 +130,7 @@ CREATE INDEX ORIGINAL_URL_UNIQUE ON SHORT_URL(ORIGINAL_URL_HASH);
 
 #### 5.5. 이미 생성되어 있는 Shortening URL 을 브라우저 URL 입력창이 아니라 사용자 입력창(input tag)에 넣을 수 있다.
 사용자가 이미 생성되어 있는 Shortening URL 에 대해 다시 Shortening URL을 생성하려고 할 경우엔, Original URL 로 리다이렉트 하도록 처리하였다.
-즉, 요구사항에 있던 Shortening URL을 브라우저 URL 입력창에 입력하였을 때 리다이렉트 하는 것과 동일하게 처리한 것이다.
+즉, Shortening URL을 브라우저 URL 입력창에 입력하였을 때 리다이렉트 하는 것과 동일하게 처리한 것이다.
 
 
       
