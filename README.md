@@ -34,7 +34,7 @@ URL을 입력받아 줄여주고, 단축URL을 입력하면 원래 URL 로 리�
     * `./gradlew bootRun`
 
 * Page URL
-    * `http://localhost:80` or `http://localhost`
+    * `http://localhost`
 
 ---
 
