@@ -1,6 +1,6 @@
 # 단축 URL 생성 프로젝트 
 URL을 입력받아 줄여주고, 단축URL을 입력하면 원래 URL 로 리다이렉트하는 URL Shortening Service  
-예) https://recruit.navercorp.com/naver/job/detail/developer/?annoId=20002705&classId&jobId&fbclid=IwAR3sVYHouw4HfYVW2161BdBwtW4r5Cyd7u_Ho_DiOy9YtUVG_hRoy7k88uI => https://naver.com/AZa0QRI1
+예) https://careers.kakao.com/index => https://kakao.com/AZa0QRI1
 
 ## 1. 개발 내용
 * 단축URL Key 는 8 Character 이내로 생성되도록 하였다.
@@ -140,7 +140,7 @@ CREATE INDEX ORIGINAL_URL_UNIQUE ON SHORT_URL(ORIGINAL_URL_HASH);
 * URL 중에는 한글 URL도 있을 것이다. 이것은 리다이렉트할 때 문제가 되는데, 한글 인코딩 처리는 UrlEncodingUtil 가 한다.
 * http:// 또는 https:// 형식의 URL을 받도록 하였다.
 * 같은 URL이지만 끝에 slash(/)를 붙여서 Shortening URL이 두 개 생성되게 하는 것은 리소스 낭비이기 때문에 UrlCorrector가 끝 slash를 지운다.  
-예) `https://www.naver.com` 또는 `https://www.naver.com/`를 입력하면 `https://www.naver.com`로 처리한다.
+예) `https://www.kakaocorp.com` 또는 `https://www.kakaocorp.com/`를 입력하면 `https://www.kakaocorp.com`로 처리한다.
 
 
 ## 6. API 명세
