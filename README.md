@@ -1,6 +1,5 @@
 # 단축 URL 생성 프로젝트 
 URL을 입력받아 줄여주고, 단축URL을 입력하면 원래 URL 로 리다이렉트하는 URL Shortening Service  
-예) https://careers.kakao.com/index => https://kakao.com/AZa0QRI1
 
 ## 1. 개발 내용
 * 단축URL Key 는 8 Character 이내로 생성되도록 하였다.
